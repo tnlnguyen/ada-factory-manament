@@ -22,7 +22,7 @@ class User extends restful_api
     	}
     	else {
             mysqli_close($this->connection);
-            return $this->reponse(400);
+            return $this->response(400);
     	}
     }
 }
@@ -31,6 +31,9 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     echo $user->user_exist($username, $password);
+}
+else {
+    (new restful_api)->response(400);
 }
 
 ?>
