@@ -1,3 +1,2 @@
-# ada-factory-manament
-ADAhill Project
+# ADAhill Project
 c
