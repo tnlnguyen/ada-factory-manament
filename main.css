@@ -1,0 +1,179 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin: 0px;
+    background: #EEEEEE;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+header li, a, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 30px 20px 30px;
+    padding: 5px 30px;
+
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0, 0.5);
+
+    background-color: #000000;
+
+    border:  1px solid transparent;
+    border-radius: 50px;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.navlinks {
+    list-style: none;
+    margin: 0;
+}
+
+.navlinks li {
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+.navlinks li, a {
+    transition: all 0.3s ease 0s;
+}
+
+.navlinks li:hover , a:hover {
+    color: #40C4FF;
+}
+
+.navbutton button {
+    margin-left: 10px;
+    padding: 7px 10px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    font-weight: 700;
+}
+
+.navbutton button:hover {
+    color: #40C4FF;
+    letter-spacing: 0.3em;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 9px 0px;
+    font-size: 16px;
+    border: none;
+
+    transition: all 0.3s ease 0s;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: max-content;
+    min-width: 200px;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0, 0.5);
+    z-index: 1;
+    padding: 10px;
+    border-top: 1px solid transparent;
+    border-color: #40C4FF;
+    transition: all 0.3s ease 0s;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+    transition: all 0.3s ease 0s;
+}
+
+.dropdown-content a:hover {
+    color: #40C4FF;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #40C4FF;
+    letter-spacing: 0.1em;
+}
+
+
+.main {
+    display: grid;
+    grid-template-columns: 1.5fr 4fr;
+}
+
+.filter {
+    margin: 0px 10px 10px 30px;
+    padding: 20px 10px 50px 30px;
+    background: #E0E0E0;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0, 0.5);
+
+    border: 1px solid transparent;
+    border-color: #000000;
+    border-radius: 10px;
+    font-weight: 300;
+    font-size: medium;
+    color: black;
+}
+
+.filter h3 {
+    font-weight: 500;
+    font-size: medium;
+    color: black;
+}
+
+.proline_select {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.filter input[type="radio"] {
+    margin: 5px 0px 8px 20px;
+}
+
+.charts {
+    width: auto;
+
+    margin: 0px 30px 10px 10px;
+    padding: 20px 30px 50px 30px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0, 0.5);
+
+    border: 1px solid transparent;
+    border-color: #000000;
+    border-radius: 10px;
+    font-weight: 300;
+    font-size: medium;
+    color: black;
+}
+
+.card {
+    display: block;
+    margin: 10px;
+}

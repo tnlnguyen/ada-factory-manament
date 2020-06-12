@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Demo Website</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src='main.js'></script>
+
+    <!-- Add icon library -->
+    <link   rel="stylesheet" 
+            href="font-awesome-4.7.0\css\font-awesome.css">
+</head>
+<body>
+
+    <nav class="container">
+
+        <div>
+            <header>
+                <!-- TRANG CHU -->
+                <a class="navbutton" href="#">
+                    <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+                </a>
+        
+                <nav>
+                    <ul class="navlinks">
+
+                        <!-- SAN XUAT -->
+                        <div class="dropdown">
+        
+                            <li>
+                                <button class="dropbtn">Sản xuất
+                                    <i class="fa fa-angle-down" style="margin-left: 5px;" aria-hidden="true"></i>
+                                </button>
+                            </li>
+        
+                            <div class="dropdown-content">
+                                <a href="#">Thông tin sản xuất theo thời gian thực</a>
+                                <a href="#">Lịch sử sản phẩm</a>
+                                <a href="#">Lịch đổi sản phẩm</a>
+                            </div>
+        
+                        </div>
+        
+                        <!-- CHAT LUONG -->
+                        <div class="dropdown">
+        
+                            <li>
+                                <button class="dropbtn">Chất lượng
+                                    <i class="fa fa-angle-down" style="margin-left: 5px;" aria-hidden="true"></i>
+                                </button>
+                            </li>
+        
+                            <div class="dropdown-content">
+                                <a href="#">Thông tin chất lượng theo thời gian thực</a>
+                                <a href="#">Lịch sử chất lượng</a>
+                            </div>
+        
+                        </div>
+        
+                        <!-- QUAN LY BAO TRI -->
+                        <div class="dropdown">
+        
+                            <li>
+                                <button class="dropbtn">Quản lý bảo trì
+                                    <i class="fa fa-angle-down" style="margin-left: 5px;" aria-hidden="true"></i>
+                                </button>
+                            </li>
+        
+                            <div class="dropdown-content">
+                                <a href="#">Kế hoạch bảo trì</a>
+                                <a href="#">Lịch thực hiện bảo trì</a>
+                                <a href="#">Thống kê bảo trì</a>
+                                <a href="#">Thống kê vật tư sử dụng</a>
+                                <a href="#">Thống kê các chỉ số bảo trì</a>
+                                <a href="#">Quản lý năng lượng</a>
+                            </div>
+        
+                        </div>
+        
+                        <!-- QUAN LY KHO -->
+                        <div class="dropdown">
+        
+                            <li>
+                                <button class="dropbtn">Quản lý kho
+                                    <i class="fa fa-angle-down" style="margin-left: 5px;" aria-hidden="true"></i>
+                                </button>    
+                            </li>
+                            
+                            <div class="dropdown-content">
+                                <a href="#">Nhập hàng</a>
+                                <a href="#">Xuất hàng</a>
+                                <a href="#">Yêu cầu thiết bị</a>
+                                <a href="#">Duyệt yêu cầu</a>
+                                <a href="#">Thống kê thiết bị trong kho</a>
+                            </div>
+        
+                        </div>
+        
+                        <!-- QUAN LY HANH CHINH -->
+                        <div class="dropdown">
+        
+                            <li>
+                                <button class="dropbtn">Quản lý hành chính
+                                    <i class="fa fa-angle-down" style="margin-left: 5px;" aria-hidden="true"></i>
+                                </button>
+                            </li>
+        
+                            <div class="dropdown-content">
+                                <a href="#">Thông tin an toàn</a>
+                                <a href="#">Thông tin đào tạo</a>
+                                <a href="#">Chấm công</a>
+                            </div>
+        
+                        </div>
+        
+                    </ul>
+                </nav>
+        
+                <div>
+                    <a class="navbutton" href="login.html"><button>Login</button></a>
+                    <a class="navbutton" href="#"><button>Logout</button></a>
+                    <a class="navbutton" href="register.html"><button>Register</button></a>
+                </div>
+                
+            </header>    
+        </div>
+
+        <!-- Main -->
+        <div class="main">
+
+            <!-- Filter -->
+            <div class="filter">
+
+                <h3>Chọn dây chuyền sản xuất</h3>
+                <div class="proline_select">
+                    
+                    <div>
+
+                        <input type="radio" id="allproline" name="proline" value="all" checked>
+                        All<br>
+
+                        <input type="radio" id="proline1" name="proline" value="pl1">
+                        DC 1<br>
+
+                        <input type="radio" id="proline2" name="proline" value="pl2">
+                        DC 2<br>
+
+                        <input type="radio" id="proline3" name="proline" value="pl3">
+                        DC 3<br>
+
+                        <input type="radio" id="proline4" name="proline" value="pl4">
+                        DC 4<br>
+
+                        <input type="radio" id="proline5" name="proline" value="pl5">
+                        DC 5<br>
+
+                    </div>
+
+                    <div>
+                        <input type="radio" id="proline6" name="proline" value="pl6">
+                        DC 6<br>
+                        <input type="radio" id="proline7" name="proline" value="pl7">
+                        DC 7<br>
+                        <input type="radio" id="proline8" name="proline" value="pl8">
+                        DC 8<br>
+                        <input type="radio" id="proline9" name="proline" value="pl9">
+                        DC 9<br>
+                        <input type="radio" id="proline10" name="proline" value="pl10">
+                        DC 10<br>
+                    </div>
+                    
+                </div>
+
+                <h3>Chọn ngày giờ bắt đầu</h3>
+                <div>
+                    <input type="datetime-local" id="start" name="start">
+                </div>
+
+                <h3>Chọn ngày giờ kết thúc</h3>
+                <div>
+                    <input type="datetime-local" id="start" name="start">
+                </div>
+
+                <h3>Chọn loại dữ liệu</h3>
+                <div>
+
+                    <input type="radio" id="tatca" name="data" value="tatca" checked>
+                    Tất cả<br>
+
+                    <input type="radio" id="loai1" name="data" value="loai1">
+                    Loại 1<br>
+
+                    <input type="radio" id="loai2" name="data" value="loai2">
+                    Loại 2<br>
+
+                    <input type="radio" id="loai3" name="data" value="loai3">
+                    Loại 3<br>
+
+                </div>
+
+                <h3>Chọn loại đồ thị</h3>
+                <div>
+
+                    <input type="radio" id="hinhcot" name="chart" value="hinhcot" checked>
+                    Hình cột<br>
+
+                    <input type="radio" id="diem" name="chart" value="diemduong">
+                    Điểm / Đường<br>
+
+                    <input type="radio" id="hinhtron" name="chart" value="hinhtron">
+                    Hình tròn<br>
+
+                </div>
+
+                <h3>Chỉ số</h3>
+                <div>
+
+                    <input type="radio" id="bgchiso" name="chiso" value="bgchiso" checked>
+                    Bao gồm chỉ số<br>
+
+                    <input type="radio" id="kbgchiso" name="chiso" value="kbgchiso">
+                    Không bao gồm chỉ số<br>
+
+                </div>
+
+                <h3>Base Line</h3>                
+                <div>
+
+                    <input type="radio" id="bgduongcb" name="baseline" value="bgduongcb" checked>
+                    Bao gồm base line<br>
+
+                    <label for="bl" style="padding-left: 40px;"> = </label>
+
+                    <input type="number" id="bl" name="bl" style="margin: 10px 0px 15px 10px; width: 120px;"><br>
+
+                    <input type="radio" id="kbgduongcb" name="baseline" value="kbgduongcb">
+                    Không bao gồm base line<br>
+
+                </div>
+
+            </div>
+
+            <!-- Charts -->
+            <div class="charts">
+                <div class="card">
+                    <div id="linechart_div"></div>
+                </div>
+
+                <div class="card">
+                    <div id="colchart_div"></div>
+                </div>
+
+                <div class="card">
+                    <div id="piechart_div"></div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

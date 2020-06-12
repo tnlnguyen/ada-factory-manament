@@ -1,0 +1,145 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background: #EEEEEE;
+}
+
+.box {
+    width: 800px;
+    height: 500px;
+    padding: 10px 40px 10px 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid transparent;
+    border-color: black;
+    text-align: center;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0, 0.5);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 30px 0px 30px;
+    padding: 5px 30px;
+}
+
+header a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+
+    color: black;
+    background-color: transparent;
+    display: block;
+    text-align: center;
+    margin: 0px 20px;
+    padding: 8px 25px;
+    width: 200px;
+
+    border: 1px solid transparent;
+    border-color: black;
+    border-radius: 8px 50px;
+    outline: none;
+    transition: all 0.3s ease 0s;
+    letter-spacing: 0.2em;
+
+}
+
+header a:hover {
+    background: #FFFFFF;
+    color: #757575;
+    letter-spacing: 0.8em;
+    cursor: pointer;
+}
+
+.content {
+    position: fixed;
+    height: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.register {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.box h1 {
+    padding: 20px 20px 30px 20px;
+}
+
+.box input[type="text"], .box input[type="password"] {
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    background-color: black;
+    display: block;
+    margin: 20px 40px;
+    text-align: center;
+    padding: 15px 15px;
+    width: 250px;
+    height: 14px;
+    outline: none;
+    color: white;
+    transition: all 0.3s ease 0s;
+    letter-spacing: 0.2em;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0, 0.2);
+}
+
+.box input[type="submit"] {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    
+    background-color: black;
+    border: none;
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+    padding: 12px 25px;
+    width: 200px;
+
+    border-radius: 8px 50px;
+    outline: none;
+    transition: all 0.3s ease 0s;
+    letter-spacing: 0.2em;
+}
+
+.box input[type="submit"]:hover {
+    background: #EEEEEE;
+    color: #757575;
+    letter-spacing: 0.8em;
+    cursor: pointer;
+}
+
+.box input[type="text"]:hover, input[type="password"]:hover {
+    background: #EEEEEE;
+    letter-spacing: 0.8em;
+    color: black;
+}
+
+.radiobtn {
+    display: block;
+    background: white;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0, 0.1);
+    height: 35px;
+    margin: 8px 5px 15px 5px;
+    border: 1px solid transparent;
+    border-color: black;
+    border-radius: 20px;
+    color: black;
+    width: fit-content; 
+    padding: 0px 15px;
+}
+
+.radiobtn input, lable {
+    margin: 10px 0px;
+}
+
+
