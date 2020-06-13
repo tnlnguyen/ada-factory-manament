@@ -4,7 +4,7 @@ require 'restful_api.php';
 /**
  * summary
  */
-class User extends restful_api
+class user_controller extends restful_api
 {
     private $db;
     private $connection;
@@ -13,8 +13,10 @@ class User extends restful_api
         $this->connection = $this->db->get_connection();
         parent::__construct();
     }
-    public function user_exist($username, $password) {
-    	$query = "SELECT * FROM users WHERE username = '".$username."' AND password  = '".$password."'";
+    public function login_request() {
+        $username = $this->params['username'];
+        $password = $this->params['password'];
+        $query = "SELECT * FROM users WHERE username = '".$username."' AND password  = '".$password."'";
     	$result = mysqli_query($this->connection, $query);
     	if (mysqli_num_rows($result) == 1) {
             mysqli_close($this->connection);
@@ -26,14 +28,5 @@ class User extends restful_api
     	}
     }
 }
-if (!empty($_POST['username']) && !empty($_POST['password'])) {
-    $user = new User();
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    echo $user->user_exist($username, $password);
-}
-else {
-    (new restful_api)->response(400);
-}
-
+$user_api = new user_controller();
 ?>

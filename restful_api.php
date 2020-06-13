@@ -6,17 +6,20 @@ class restful_api {
 	protected $file = null;
 
 	public function __construct() {
-		$this->input();
+        $this->input();
 		$this->process_api();
 	}
 
 	private function input() {
-		$this->params = explode('/' ,trim($_SERVER['PATH_INFO'], '/'));
+        header("Access-Control-Allow-Orgin: *");
+        header("Access-Control-Allow-Methods: *");
+
+        $this->params = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 		$this->endpoint = array_shift($this->params);
 
 		//lay method cua request
 		$method = $_SERVER['REQUEST_METHOD'];
-		$allow_method   = array('GET', 'POST', 'PUT', 'DELETE');
+		$allow_method = array('GET', 'POST', 'PUT', 'DELETE');
 
 		if (in_array($method, $allow_method)) {
 			$this->method = $method;
@@ -25,8 +28,6 @@ class restful_api {
         switch ($this->method) {
             case 'POST':
                 $this->params = $_POST;
-            break;
-
             case 'GET':
                 // Không cần nhận, bởi params đã được lấy từ url
             break;
@@ -63,11 +64,13 @@ class restful_api {
     
     private function build_http_header_string($status_code){
         $status = array(
+            100 => 'Internal',
             200 => 'OK',
             404 => 'Not Found',
             405 => 'Method Not Allowed',
             500 => 'Internal Server Error',
-            400 => 'Bad Request'
+            400 => 'Bad Request',
+            502 => 'Bad Gateway',   
         );
         return "HTTP/1.1 " . $status_code . " " . $status[$status_code];
     }
