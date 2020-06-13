@@ -1,16 +1,17 @@
 <?php 
 require_once 'connection.php';
-header('Content-Type: application/json');
+require 'restful_api.php';
 /**
  * summary
  */
-class User_reg
+class register_controller extends restful_api
 {
     private $db;
     private $connection;
     public function __construct() {
         $this->db = new DB_connection();
         $this->connection = $this->db->get_connection();
+        parent::__construct();
     }
     public function user_exist($username, $password) {
     	$query = "SELECT * FROM users WHERE username = '".$username."' AND password  = '".$password."'";
@@ -24,34 +25,40 @@ class User_reg
             return false;
     	}
     }
-}
-if (!empty($_POST['username']) && !empty($_POST['password'])) {
-    $user = new User_reg();
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    //check if file is available
-    if (getimagesize($_FILES['image']['tmp_name']) !== false) {
-    	$image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-    }
-    else {
-        echo "<br> Image invalid!";
-    }
-    //check existant users
-    $check_exist = $user->user_exist($username, $password);
-    if (!$check_exist) {
-    	$query_reg = "INSERT INTO users (username, password, fname, lname, picture) VALUES ('$username', '$password', '$fname', '$lname', '$image')";
-        $result = mysqli_query((new DB_connection())->get_connection(),$query_reg);
-        if ($result) {
-            $json['status'] = '200 OK';
-            echo json_encode($json);
+    public function register_request() {
+        if (!empty($this->params['username']) && !empty($this->params['password'])) {
+            //check existant users
+            $check_exist = $this->user_exist($this->params['username'], $this->params['password']);
+            if (!$check_exist) {
+                $username = $this->params['username'];
+                $password = $this->params['password'];
+                $fname = $this->params['fname'];
+                $lname = $this->params['lname'];
+                $type = "";
+                if (isset($this->params['qlk'])) {
+                    $type = $this->params['qlk'];
+                }
+                else if (isset($this->params['bpk'])) {
+                    $type = $this->params['bpk'];
+                }
+                else if (isset($this->params['ql'])) {
+                    $type = $this->params['ql'];
+                }
+                $query_reg = "INSERT INTO users (username, password, fname, lname, chucvu) VALUES ('$username', '$password', '$fname', '$lname', '$type')";
+                $result = mysqli_query((new DB_connection())->get_connection(),$query_reg);
+                if ($result) {
+                    return $this->response(200);
+                }
+                mysqli_close((new DB_connection())->get_connection());
+            }
+            else {
+                return $this->response(405, "User existed");
+            }
         }
-        mysqli_close((new DB_connection())->get_connection());
+        else {
+            return $this->response(404);
+        }
     }
 }
-else {
-    $json['status'] = '404 Not found';
-    echo json_encode($json);
-}
+$reg = new register_controller();
 ?>

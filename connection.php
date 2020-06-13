@@ -1,5 +1,5 @@
 <?php 
-	require_once 'conf.php';
+	require 'conf.php';
 
 	/**
 	 * summary
