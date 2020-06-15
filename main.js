@@ -44,7 +44,7 @@ function drawChart() {
         ['Month', 'Phones', 'Tablets', 'Laptops'],
             ['Jan', 114, 164, 234],
             ['Feb', 138, 178, 278],
-            ['Mar', 200, 150, 270],
+            ['Mar', 200, 150, 270],         
             ['Apr', 235, 135, 190],
             ['May', 190, 160, 230]
         ]);
