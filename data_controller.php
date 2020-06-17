@@ -57,6 +57,7 @@ class data_controller extends restful_api {
             }
             return $this->response(404);
         }
+        return $this->response(404);
     }
 }
 $data = new data_controller();
